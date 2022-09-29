@@ -22,8 +22,14 @@ const Recipes = () => {
         }
     ]
 
-    
-
+    const avgRating = () =>{
+        let total = 0
+        for(let i = 0; i < cakes.length; i++){
+            total += cakes.rating[i];
+        }
+        return total / cakes.length;
+    }
+   
     return (
         <section className="recipeDisplay">
              <div>
@@ -32,8 +38,22 @@ const Recipes = () => {
             <div className = "cake">
                 <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cake-recipes-made-from-scratch-1645566207.jpeg" alt= "A good looking cake"></img>
             </div>
-            <div>
-
+            <div className="recipeList">
+                <ul>
+                    <li>Lemon Drizzle</li>
+                    <li>Ingredients: Eggs, Butter, Lemon Zest, Sugar, Self-Raising flour</li>
+                    <br></br>
+                    <li>Tea Loaf</li>
+                    <li>Ingredients: Eggs, Oil, Dried Fruit, Sugar, Self-Raising Flour, Strong Tea</li>
+                    <br></br>
+                    <li>Brownie</li>
+                    <li>Ingredients: Chocolate, Eggs, Flour, Butter, walnuts</li>
+                    <br></br>
+                    <li>Carrot Cake</li>
+                    <li>Ingredients: Carrots, Walnuts, Oil, Cream Cheese, Flour, Sugar</li>
+                    <br></br>
+                </ul>
+                
             </div>
         </section>
        
