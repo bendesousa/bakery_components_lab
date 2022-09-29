@@ -39,21 +39,26 @@ const Recipes = () => {
                 <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cake-recipes-made-from-scratch-1645566207.jpeg" alt= "A good looking cake"></img>
             </div>
             <div className="recipeList">
-                <ul>
-                    <li>Lemon Drizzle</li>
-                    <li>Ingredients: Eggs, Butter, Lemon Zest, Sugar, Self-Raising flour</li>
-                    <br></br>
-                    <li>Tea Loaf</li>
-                    <li>Ingredients: Eggs, Oil, Dried Fruit, Sugar, Self-Raising Flour, Strong Tea</li>
-                    <br></br>
-                    <li>Brownie</li>
-                    <li>Ingredients: Chocolate, Eggs, Flour, Butter, walnuts</li>
-                    <br></br>
-                    <li>Carrot Cake</li>
-                    <li>Ingredients: Carrots, Walnuts, Oil, Cream Cheese, Flour, Sugar</li>
-                    <br></br>
-                </ul>
-                
+                {
+                    cakes.map((cake, index) => {
+                        return(
+                            <>
+                            <h3 key={index}>{cake.cakeName}</h3>
+                            <ul>
+                                {cake.ingredients.map((ingredient, index) => {
+                                    return(
+                                        <li key={index}>{ingredient}</li>
+                                    )
+                                })}
+                            </ul>
+                            </>
+                            
+                        )
+                    })
+                } 
+            </div>
+            <div>
+
             </div>
         </section>
        
